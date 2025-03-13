@@ -37,7 +37,9 @@ const Navbar = () => {
   return (
     <nav 
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-gray-100 shadow-lg' : 'bg-gray-100/80'
+        isScrolled 
+          ? 'md:bg-gray-100 md:shadow-lg bg-gray-100' 
+          : 'md:bg-gray-100/80 bg-gray-100/90'
       }`}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -126,7 +128,7 @@ const Navbar = () => {
           <div className="md:hidden flex items-center">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-800 focus:outline-none"
+              className="inline-flex items-center justify-center p-2 rounded-md text-gray-600 hover:text-gray-900 hover:bg-gray-100 focus:outline-none"
               aria-expanded="false"
             >
               <span className="sr-only">Open main menu</span>
@@ -145,15 +147,15 @@ const Navbar = () => {
       </div>
 
       {/* Mobile menu */}
-      <div className={`${isOpen ? 'block' : 'hidden'} md:hidden bg-black`}>
-        <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+      <div className={`${isOpen ? 'block' : 'hidden'} md:hidden bg-gray-200 py-4`}>
+        <div className="flex flex-col space-y-3 px-4">
           <Link 
             href="/" 
             className={`${
               router.pathname === '/' 
-                ? 'bg-gray-900 text-white' 
-                : 'text-gray-100 hover:bg-gray-700 hover:text-white'
-            } block px-3 py-2 rounded-md text-base font-medium`}
+                ? 'bg-purple-100 text-purple-900 font-bold' 
+                : 'text-gray-900 hover:bg-gray-100 hover:text-purple-900'
+            } w-full py-3 px-4 rounded-lg text-base font-medium text-center`}
           >
             Home
           </Link>
@@ -161,9 +163,9 @@ const Navbar = () => {
             href="/movies" 
             className={`${
               router.pathname.includes('/movies') 
-                ? 'bg-gray-900 text-white' 
-                : 'text-gray-100 hover:bg-gray-700 hover:text-white'
-            } block px-3 py-2 rounded-md text-base font-medium`}
+                ? 'bg-purple-100 text-purple-900 font-bold' 
+                : 'text-gray-900 hover:bg-gray-100 hover:text-purple-900'
+            } w-full py-3 px-4 rounded-lg text-base font-medium text-center`}
           >
             Movies
           </Link>
@@ -171,9 +173,9 @@ const Navbar = () => {
             href="/schedule" 
             className={`${
               router.pathname.includes('/schedule') 
-                ? 'bg-gray-900 text-white' 
-                : 'text-gray-100 hover:bg-gray-700 hover:text-white'
-            } block px-3 py-2 rounded-md text-base font-medium`}
+                ? 'bg-purple-100 text-purple-900 font-bold' 
+                : 'text-gray-900 hover:bg-gray-100 hover:text-purple-900'
+            } w-full py-3 px-4 rounded-lg text-base font-medium text-center`}
           >
             Schedule
           </Link>
@@ -181,9 +183,9 @@ const Navbar = () => {
             href="/contact" 
             className={`${
               router.pathname === '/contact' 
-                ? 'bg-gray-900 text-white' 
-                : 'text-gray-100 hover:bg-gray-700 hover:text-white'
-            } block px-3 py-2 rounded-md text-base font-medium`}
+                ? 'bg-purple-100 text-purple-900 font-bold' 
+                : 'text-gray-900 hover:bg-gray-100 hover:text-purple-900'
+            } w-full py-3 px-4 rounded-lg text-base font-medium text-center`}
           >
             Contact
           </Link>
@@ -192,13 +194,13 @@ const Navbar = () => {
             <>
               <Link 
                 href="/profile" 
-                className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+                className="w-full py-3 px-4 rounded-lg text-base font-medium text-center text-gray-900 hover:bg-gray-100 hover:text-purple-900"
               >
                 My Account
               </Link>
               <button 
                 onClick={handleLogout} 
-                className="w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+                className="w-full py-3 px-4 rounded-lg text-base font-medium text-center text-gray-900 hover:bg-gray-100 hover:text-purple-900"
               >
                 Logout
               </button>
@@ -206,7 +208,7 @@ const Navbar = () => {
           ) : (
             <Link 
               href="/login" 
-              className="block px-3 py-2 rounded-md text-base font-medium bg-purple-600 text-white hover:bg-purple-700"
+              className="w-full py-3 px-4 rounded-lg text-base font-medium text-center bg-purple-600 text-white hover:bg-purple-700"
             >
               Login
             </Link>
