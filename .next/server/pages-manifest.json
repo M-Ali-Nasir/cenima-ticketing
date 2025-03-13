@@ -1,0 +1,18 @@
+{
+  "/_app": "pages/_app.js",
+  "/_error": "pages/_error.js",
+  "/api/auth/login": "pages/api/auth/login.js",
+  "/api/auth/register": "pages/api/auth/register.js",
+  "/api/movies/[id]/feedback": "pages/api/movies/[id]/feedback.js",
+  "/api/recommendations": "pages/api/recommendations.js",
+  "/booking/[id]": "pages/booking/[id].html",
+  "/contact": "pages/contact.html",
+  "/": "pages/index.html",
+  "/login": "pages/login.html",
+  "/movies/[id]": "pages/movies/[id].html",
+  "/movies": "pages/movies.html",
+  "/register": "pages/register.html",
+  "/schedule": "pages/schedule.html",
+  "/_document": "pages/_document.js",
+  "/404": "pages/404.html"
+}
